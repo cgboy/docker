@@ -15,7 +15,7 @@ RUN mkdir ~/go
 RUN wget --no-check-certificate https://storage.googleapis.com/golang/go1.7.4.linux-amd64.tar.gz
 RUN tar -xzf go1.7.4.linux-amd64.tar.gz -C /usr/local
 ENV GOPATH ~/go
-ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
+ENV PATH $PATH:/usr/local/go/bin
 EXPOSE 22
 
 CMD    ["/usr/sbin/sshd", "-D"]
