@@ -17,7 +17,7 @@ RUN tar -xzf go1.7.4.linux-amd64.tar.gz -C /usr/local
 
 RUN echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
 RUN echo "export GOPATH=~/hhsoft/go" >> /etc/profile
-RUN   source /etc/profile
+#RUN   source /etc/profile
 EXPOSE 22
 
 CMD    ["/usr/sbin/sshd", "-D"]
