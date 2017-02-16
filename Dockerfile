@@ -14,8 +14,10 @@ RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 RUN mkdir ~/go
 RUN wget --no-check-certificate https://storage.googleapis.com/golang/go1.7.4.linux-amd64.tar.gz
 RUN tar -xzf go1.7.4.linux-amd64.tar.gz -C /usr/local
-ENV GOPATH ~/go
-ENV PATH $PATH:/usr/local/go/bin
+
+RUN echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
+RUN echo "export GOPATH=~/hhsoft/go" >> /etc/profile
+RUN   source /etc/profile
 EXPOSE 22
 
 CMD    ["/usr/sbin/sshd", "-D"]
