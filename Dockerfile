@@ -16,7 +16,7 @@ RUN wget --no-check-certificate https://storage.googleapis.com/golang/go1.8.linu
 RUN tar -xzf go1.8.linux-amd64.tar.gz -C /usr/local
 
 RUN echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
-RUN echo "export GOPATH=~/hhsoft/go" >> /etc/profile
+RUN echo "export GOPATH=~/go" >> /etc/profile
 #RUN   source /etc/profile
 EXPOSE 22
 
