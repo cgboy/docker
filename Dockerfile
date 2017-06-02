@@ -12,8 +12,8 @@ RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
 RUN mkdir ~/go
-RUN wget --no-check-certificate https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
-RUN tar -xzf go1.8.linux-amd64.tar.gz -C /usr/local
+RUN wget --no-check-certificate https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz
+RUN tar -xzf go1.8.3.linux-amd64.tar.gz -C /usr/local
 
 RUN echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
 RUN echo "export GOPATH=~/go" >> /etc/profile
